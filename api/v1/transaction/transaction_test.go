@@ -8,12 +8,12 @@ import (
 	"strings"
 	"testing"
 
-	"transactionapp/app"
-	"transactionapp/app/fiscaldata"
-	"transactionapp/app/transaction"
-	"transactionapp/internal/cache"
-	"transactionapp/internal/validate"
-	"transactionapp/model"
+	"github.com/jcpribeiro/TransactionApp/app"
+	"github.com/jcpribeiro/TransactionApp/app/fiscaldata"
+	"github.com/jcpribeiro/TransactionApp/app/transaction"
+	"github.com/jcpribeiro/TransactionApp/internal/cache"
+	"github.com/jcpribeiro/TransactionApp/internal/validate"
+	"github.com/jcpribeiro/TransactionApp/model"
 
 	"github.com/golang/mock/gomock"
 	"github.com/labstack/echo/v4"

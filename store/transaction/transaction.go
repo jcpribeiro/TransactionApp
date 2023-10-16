@@ -3,7 +3,7 @@ package transaction
 import (
 	"context"
 
-	"transactionapp/model"
+	"github.com/jcpribeiro/TransactionApp/model"
 
 	"github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson/primitive"

@@ -1,7 +1,7 @@
 package store
 
 import (
-	"transactionapp/store/transaction"
+	"github.com/jcpribeiro/TransactionApp/store/transaction"
 
 	"github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/mongo"

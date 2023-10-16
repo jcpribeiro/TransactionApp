@@ -4,8 +4,8 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"transactionapp/config"
-	"transactionapp/server"
+	"github.com/jcpribeiro/TransactionApp/config"
+	"github.com/jcpribeiro/TransactionApp/server"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"

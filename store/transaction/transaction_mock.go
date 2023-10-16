@@ -7,7 +7,7 @@ package transaction
 import (
 	context "context"
 	reflect "reflect"
-	model "transactionapp/model"
+	model "github.com/jcpribeiro/TransactionApp/model"
 
 	gomock "github.com/golang/mock/gomock"
 )

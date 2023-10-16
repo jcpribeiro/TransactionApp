@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"testing"
-	"transactionapp/model"
+	"github.com/jcpribeiro/TransactionApp/model"
 
 	"github.com/go-redis/redis/v8"
 	"github.com/go-redis/redismock/v8"

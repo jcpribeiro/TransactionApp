@@ -6,7 +6,7 @@ import (
 	"github.com/labstack/echo/v4"
 	echoSwagger "github.com/swaggo/echo-swagger"
 
-	docs "transactionapp/docs"
+	docs "github.com/jcpribeiro/TransactionApp/docs"
 )
 
 // Options struct de opções para a criação de uma instancia do swagger

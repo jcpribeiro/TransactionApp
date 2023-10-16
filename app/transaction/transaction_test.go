@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 	"testing"
-	"transactionapp/model"
-	"transactionapp/store"
-	"transactionapp/store/transaction"
+	"github.com/jcpribeiro/TransactionApp/model"
+	"github.com/jcpribeiro/TransactionApp/store"
+	"github.com/jcpribeiro/TransactionApp/store/transaction"
 
 	"github.com/golang/mock/gomock"
 	"github.com/sirupsen/logrus"

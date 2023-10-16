@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 	"time"
-	"transactionapp/model"
+	"github.com/jcpribeiro/TransactionApp/model"
 
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"

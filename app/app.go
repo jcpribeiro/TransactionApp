@@ -1,9 +1,9 @@
 package app
 
 import (
-	"transactionapp/app/fiscaldata"
-	"transactionapp/app/transaction"
-	"transactionapp/store"
+	"github.com/jcpribeiro/TransactionApp/app/fiscaldata"
+	"github.com/jcpribeiro/TransactionApp/app/transaction"
+	"github.com/jcpribeiro/TransactionApp/store"
 
 	"github.com/sirupsen/logrus"
 )

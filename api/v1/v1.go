@@ -1,10 +1,10 @@
 package v1
 
 import (
-	"transactionapp/app"
-	"transactionapp/internal/cache"
+	"github.com/jcpribeiro/TransactionApp/app"
+	"github.com/jcpribeiro/TransactionApp/internal/cache"
 
-	"transactionapp/api/v1/transaction"
+	"github.com/jcpribeiro/TransactionApp/api/v1/transaction"
 
 	"github.com/labstack/echo/v4"
 )

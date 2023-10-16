@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 	"time"
-	"transactionapp/model"
-	"transactionapp/store"
+	"github.com/jcpribeiro/TransactionApp/model"
+	"github.com/jcpribeiro/TransactionApp/store"
 
 	"github.com/sirupsen/logrus"
 )

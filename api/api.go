@@ -1,9 +1,9 @@
 package api
 
 import (
-	v1 "transactionapp/api/v1"
-	"transactionapp/app"
-	"transactionapp/internal/cache"
+	v1 "github.com/jcpribeiro/TransactionApp/api/v1"
+	"github.com/jcpribeiro/TransactionApp/app"
+	"github.com/jcpribeiro/TransactionApp/internal/cache"
 
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"

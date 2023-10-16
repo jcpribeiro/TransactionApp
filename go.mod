@@ -1,4 +1,4 @@
-module transactionapp
+module github.com/jcpribeiro/TransactionApp
 
 go 1.19
 

@@ -3,17 +3,17 @@ package server
 import (
 	"os"
 	"time"
-	"transactionapp/api"
-	"transactionapp/app"
-	"transactionapp/config"
+	"github.com/jcpribeiro/TransactionApp/api"
+	"github.com/jcpribeiro/TransactionApp/app"
+	"github.com/jcpribeiro/TransactionApp/config"
 
-	"transactionapp/internal/cache"
-	"transactionapp/internal/mongodb"
-	"transactionapp/internal/validate"
+	"github.com/jcpribeiro/TransactionApp/internal/cache"
+	"github.com/jcpribeiro/TransactionApp/internal/mongodb"
+	"github.com/jcpribeiro/TransactionApp/internal/validate"
 
-	"transactionapp/store"
+	"github.com/jcpribeiro/TransactionApp/store"
 
-	"transactionapp/api/swagger"
+	"github.com/jcpribeiro/TransactionApp/api/swagger"
 
 	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo/v4"
