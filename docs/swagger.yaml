@@ -1,0 +1,167 @@
+definitions:
+  model.Transaction:
+    properties:
+      description:
+        type: string
+      purchase_amount:
+        type: number
+      purchase_date:
+        type: string
+    required:
+    - description
+    - purchase_amount
+    type: object
+  model.TransactionResponse:
+    properties:
+      converted_purchase_amount:
+        type: number
+      description:
+        type: string
+      exchange_rate:
+        type: number
+      id:
+        type: string
+      purchase_amount:
+        type: number
+      purchase_date:
+        type: string
+    required:
+    - description
+    - purchase_amount
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/transaction:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Transactions ids. If more than one id is provided, it must be
+          separated by a comma. E.g. id1,id2
+        in: query
+        name: ids
+        required: true
+        type: string
+      - description: Currency ids. E.g. Argentina-Peso
+        in: query
+        name: currency
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TransactionResponse'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      summary: Retrive stored a purchase transaction
+      tags:
+      - transaction
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: add new transaction
+        in: body
+        name: transaction
+        required: true
+        schema:
+          items:
+            $ref: '#/definitions/model.Transaction'
+          type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              type: string
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      summary: Store a purchase transaction
+      tags:
+      - transaction
+  /v1/transaction/epoch-period:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Period start date. E.g. 1697150153
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: Period end date. E.g. 1697409353
+        in: query
+        name: endDate
+        required: true
+        type: string
+      - description: Currency ids. E.g. Argentina-Peso
+        in: query
+        name: currency
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TransactionResponse'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      summary: Retrive stored a purchase transaction by period using epoch format
+      tags:
+      - transaction
+  /v1/transaction/period:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Period start date. E.g. 2023-10-12
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: Period end date. E.g. 2023-10-14
+        in: query
+        name: endDate
+        required: true
+        type: string
+      - description: Currency ids. E.g. Argentina-Peso
+        in: query
+        name: currency
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.TransactionResponse'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            type: string
+      summary: Retrive stored a purchase transaction by period
+      tags:
+      - transaction
+swagger: "2.0"

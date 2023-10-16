@@ -1,0 +1,22 @@
+{
+    "env": "development",
+    "server": {
+        "port": ":5055"
+    },
+    "fiscaldata":{
+        "url":"https://api.fiscaldata.treasury.gov/services/api/fiscal_service"
+    },
+    "redis": {
+        "url": "127.0.0.1:6379",
+        "password": "",
+        "db": 0
+    },
+    "mongodb_reader": {
+        "url": "mongodb://root:root@localhost:27017",
+        "scheme": "transactionapp"
+    },
+    "mongodb_writer": {
+        "url": "mongodb://root:root@localhost:27017",
+        "scheme": "transactionapp"
+    }
+}
