@@ -100,14 +100,14 @@ func (h *handler) getTransactions(c echo.Context) error {
 
 	if len(response) != len(ids) {
 		response, err = h.apps.Transaction.GetTransactions(c.Request().Context(), ids)
-		if err != nil || data == nil {
-			return fmt.Errorf("failed to get rates exchange")
+		if err != nil {
+			return err
 		}
 
 		for _, r := range response {
 			data, err := h.apps.FiscalData.GetRatesOfExchange(params.Currency, r.PurchaseDate)
-			if err != nil {
-				return err
+			if err != nil || data == nil {
+				return fmt.Errorf("failed to get rates exchange")
 			}
 			r.PurchaseAmount = util.RoundFloat(r.PurchaseAmount, 2)
 			r.ExchangeRate = util.RoundFloat(data.ExchangeRate, 2)
