@@ -4,9 +4,9 @@ help:  ## show this help
 	@echo ""
 	@egrep "^(.+)\:\ .*##\ (.+)" ${MAKEFILE_LIST} | sed 's/:.*##/#/' | column -t -c 2 -s '#'
 
-.PHONY: run-services
-run-services: ## run it will instance server
-	docker-compose up -d
+.PHONY: build-run
+build-run: ## build-run it will build the docker image and run the resources used by application 
+	docker build -t transactionapp --build-arg GOLANG_VERSION=1.19 . && docker-compose up -d
 
 .PHONY: run
 run: ## run it will instance server

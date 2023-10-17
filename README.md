@@ -27,7 +27,7 @@ To run the API unit tests, use the command `make mock` and then the `make test`.
 
 There are two basic commands for running the project:
 
-- `make run-services`: starts the containers for the resources used by the service.
+- `make build-run`: build the application and starts the containers for the resources used by the service.
 - `make run`: wrapper to command `go run main.go`.
 
 ## 📋 Documentation

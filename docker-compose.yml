@@ -4,6 +4,8 @@ services:
     image: redis:alpine
     ports:
       - '6379:6379'
+    networks:
+      - app-network
   mongo-express:
     image: mongo-express
     ports:
@@ -18,7 +20,7 @@ services:
     links:
       - mongo
     networks:
-      - mongo-compose-network
+      - app-network
   mongo:
     image: mongo
     environment:
@@ -29,8 +31,19 @@ services:
     volumes:
       - ./mongo:/data/db
     networks:
-      - mongo-compose-network
+      - app-network
+  app:
+    image: transactionapp
+    ports: 
+      - "5055:5055"
+    environment:
+      APP_ENV: prod 
+    networks:
+      - app-network
+    links:
+      - redis
+      - mongo
 
 networks: 
-    mongo-compose-network:
+    app-network:
       driver: bridge

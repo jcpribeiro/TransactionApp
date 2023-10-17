@@ -23,9 +23,16 @@ func loadConfig(path string) error {
 }
 
 func main() {
-	err := loadConfig("./config.json")
-	if err != nil {
-		logrus.Fatal("cannot load config: ", err)
+	if os.Getenv("APP_ENV") == "prod"{
+		err := loadConfig("./config_prod.json")
+		if err != nil {
+			logrus.Fatal("cannot load config: ", err)
+		}
+	}else {
+		err := loadConfig("./config.json")
+		if err != nil {
+			logrus.Fatal("cannot load config: ", err)
+		}
 	}
 
 	server := server.NewServer()
